@@ -9,12 +9,16 @@
     "url": "git://github.com/rallyapps/sdk2-test-utils.git"
   },
   "license": "MIT",
-  "main": "index",
   "engines": {
     "node": ">0.10.32"
   },
   "dependencies": {
     "jasmine-sinon": "0.3.2",
     "sinon": "1.17.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-uglify": "2.0.0"
   }
 }
