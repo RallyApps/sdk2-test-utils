@@ -1,0 +1,20 @@
+{
+  "author": "Kyle Morse <kyle.morse@ca.com>",
+  "name": "rally-sdk2-test-utils",
+  "description": "Utilities, mock data and helpers for writing unit tests for SDK 2.1 apps",
+  "version": "0.1.0",
+  "homepage": "https://github.com/rallyapps/sdk2-test-utils",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rallyapps/sdk2-test-utils.git"
+  },
+  "license": "MIT",
+  "main": "index",
+  "engines": {
+    "node": ">0.10.32"
+  },
+  "dependencies": {
+    "jasmine-sinon": "0.3.2",
+    "sinon": "1.17.6"
+  }
+}
