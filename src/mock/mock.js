@@ -10,14 +10,23 @@
     },
 
     mockAppRequests: function() {
-        var project = Rally.environment.getContext().getProject();
-        this.ajax.whenReading('project', project.ObjectID).respondWith(project);
+        var context = Rally.environment.getContext(),
+          project = context.getProject();
+
+        // this.ajax.whenReading('project', project.ObjectID).respondWith(project);
+
+        Rally.test.mock.data.WsapiModelFactory.stubModelCache(sinonSandbox);
+        Rally.test.mock.data.WsapiModelFactory.clearModels();
+    },
+
+    getAppContext: function(contextConfig) {
+      return Rally.environment.getAppContext();
     }
   });
 
   beforeEach(function() {
     var config = Object.assign(sinon.getConfig(sinon.config), {
-      injectInto: Rally.test.Mock,
+      injectInto: this,
       useFakeTimers: false,
       useFakeServer: false
     });
@@ -27,7 +36,6 @@
       ajax: Ext.create('Rally.test.mock.AjaxBuilder', Ext.create('Rally.test.mock.AjaxInterceptor', sinonSandbox))
     });
     mock.mockAppRequests();
-
   });
 
   afterEach(function() {

@@ -10,13 +10,15 @@
     },
 
     tearDown: function() {
-      Rally.destroyApp();
+      // Rally.destroyApp();
     }
   });
 
-  beforeEach(function() {
+  beforeEach(function(done) {
     global = Ext.create('Rally.test.env.Global');
     global.setup();
+
+    Rally.onReady(done);
   });
 
   afterEach(function() {

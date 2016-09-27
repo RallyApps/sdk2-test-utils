@@ -25,8 +25,7 @@
 
   Ext.define('Rally.test.mock.AjaxBuilder', {
     mixins: {
-      //TODO
-      // snapshot: 'Rally.test.SnapshotAjaxBuilder'
+      snapshot: 'Rally.test.mock.SnapshotAjaxBuilder'
     },
     config: {
       type: void 0,
