@@ -13,8 +13,6 @@
         var context = Rally.environment.getContext(),
           project = context.getProject();
 
-        // this.ajax.whenReading('project', project.ObjectID).respondWith(project);
-
         Rally.test.mock.data.WsapiModelFactory.stubModelCache(sinonSandbox);
         Rally.test.mock.data.WsapiModelFactory.clearModels();
     },

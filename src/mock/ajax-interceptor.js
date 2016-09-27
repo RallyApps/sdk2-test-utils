@@ -304,10 +304,7 @@
         options = {};
       }
       _mockResponses = this._mockResponses;
-      delay = options.delay;
-      if (!_.isNumber(delay)) {
-        delay = delay === true ? 1 : void 0;
-      }
+      delay = options.delay || 1;
       status = options.status != null ? options.status : success ? 200 : 400;
       mockConfig = {
         url: options.url,
@@ -360,7 +357,7 @@
         }
       };
       if (!this.ext4Stub) {
-        this.stub = this.ext4Stub = this.testCase.stub(Ext.data.Connection.prototype, 'request', sendResponse);
+        this.stub = this.ext4Stub = this.testCase.stub(Ext.Ajax, 'request', sendResponse);
       }
       if (this.ext4JsonPStub == null) {
         this.ext4JsonPStub = this.testCase.stub(Ext.data.JsonP, 'request', sendResponse);
