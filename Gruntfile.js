@@ -22,6 +22,7 @@ module.exports = function(grunt) {
             'src/helpers/environment.js',
             'src/helpers/global.js',
             'src/helpers/generate.js',
+            'src/helpers/async.js',
             'src/mock/snapshot-ajax-builder.js',
             'src/mock/ajax-builder.js',
             'src/mock/ajax-interceptor.js',
