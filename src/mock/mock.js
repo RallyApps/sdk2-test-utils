@@ -24,7 +24,7 @@
 
   beforeEach(function() {
     var config = Object.assign(sinon.getConfig(sinon.config), {
-      injectInto: this,
+      injectInto: jasmine.getGlobal(),
       useFakeTimers: false,
       useFakeServer: false
     });

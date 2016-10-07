@@ -5,15 +5,14 @@
         singleton: true,
 
         launchApp: function(appCls, config) {
-            config = config || {};
-            app = Ext.create(appCls, Ext.apply(config, {
+            app = Ext.create(appCls, Ext.apply({
                 context: Rally.environment.getAppContext(),
                 renderTo: 'testDiv',
                 appScopedSettings: {},
                 workspaceScopedSettings: {},
                 projectScopedSettings: {},
                 userScopedSettings: {}
-            }));
+            }, config));
             return app;
         },
 
@@ -24,7 +23,7 @@
           }
         }
     }, function() {
-    
+
       Rally.launchApp = function(appCls, config) {
           return Rally.test.sdk.Bootstrapper.launchApp(appCls, config);
       };

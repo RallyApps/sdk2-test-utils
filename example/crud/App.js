@@ -1,4 +1,4 @@
-Ext.define('Rally.example.CRUDTesting', {
+Ext.define('Rally.example.test.Crud', {
     extend: 'Rally.app.App',
     componentCls: 'app',
 

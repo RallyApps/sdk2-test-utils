@@ -81,7 +81,7 @@
             };
         },
 
-        getAppContext: function() {
+        getAppContext: function(overrides) {
             var context = Ext.clone(this.getContext().getProps());
             return Ext.create('Rally.app.Context', {
                 initialValues: Ext.apply(context, {
@@ -90,10 +90,8 @@
                     workspace: context.scope.workspace,
                     projectScopeUp: context.scope.up,
                     projectScopeDown: context.scope.down
-                })
+                }, overrides)
             });
         }
-
     });
-
 })();

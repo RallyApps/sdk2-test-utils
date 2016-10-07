@@ -5,7 +5,7 @@
 
   function waitForSpec(spec) {
     return function(done) {
-      var promise = spec.call(this);
+      var promise = spec.call(jasmine.getGlobal());
       if (!promise || !promise.then) {
         throw new Error('pit() tests must return a promise');
       }
@@ -47,9 +47,15 @@
     return deferred.promise;
   };
 
-  jasmineGlobal.onceCalled = jasmineEnv.onceCalled = function onceCalled(stub, times) {
+  jasmineGlobal.onceCalled = jasmineEnv.onceCalled = function onceCalled(stubFn, times) {
     times = times || 1;
-    return this.once(function() { return stub.callCount >= times });
+    return this.once(function() { return stubFn.callCount >= times });
+  };
+
+  jasmineGlobal.onceFired = jasmineEnv.onceFired = function onceFired(cmp, evt) {
+    var eventStub = this.stub();
+    cmp.on(evt, eventStub, jasmine.getGlobal(), {single: true});
+    return this.onceCalled(eventStub);
   };
 
 })(jasmine);
