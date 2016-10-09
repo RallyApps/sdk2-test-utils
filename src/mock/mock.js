@@ -23,17 +23,21 @@
   });
 
   beforeEach(function() {
-    var config = Object.assign(sinon.getConfig(sinon.config), {
-      injectInto: jasmine.getGlobal(),
+    var config = Ext.apply(sinon.getConfig(sinon.config), {
+      injectInto: this,
       useFakeTimers: false,
       useFakeServer: false
     });
     sinonSandbox = sinon.sandbox.create(config);
 
+    var ajax = Ext.create('Rally.test.mock.AjaxBuilder', Ext.create('Rally.test.mock.AjaxInterceptor', sinonSandbox));
     var mock = Rally.test.Mock = Ext.create('Rally.test.mock.Mock', {
-      ajax: Ext.create('Rally.test.mock.AjaxBuilder', Ext.create('Rally.test.mock.AjaxInterceptor', sinonSandbox))
+      ajax: ajax
     });
     mock.mockAppRequests();
+
+    this.ajax = ajax;
+    this.dataFactory = Rally.test.mock.ModelObjectMother;
   });
 
   afterEach(function() {

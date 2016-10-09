@@ -5,7 +5,7 @@
 
   function waitForSpec(spec) {
     return function(done) {
-      var promise = spec.call(jasmine.getGlobal());
+      var promise = spec.call(this);
       if (!promise || !promise.then) {
         throw new Error('pit() tests must return a promise');
       }
@@ -17,22 +17,22 @@
   }
 
   function checkPredicate(predicate) {
-    return !!predicate.call(jasmineGlobal);
+    return !!predicate.call();
   }
 
-  jasmineGlobal.pit = jasmineEnv.pit = function pit(specName, spec) {
-    return jasmineGlobal.it(specName, waitForSpec(spec));
+  jasmineGlobal.pit = function pit(specName, spec) {
+    return jasmineEnv.it(specName, waitForSpec(spec));
   };
 
-  jasmineGlobal.fpit = jasmineEnv.fpit = function fpit(specName, spec) {
-    return jasmineGlobal.fit(specName, waitForSpec(spec));
+  jasmineGlobal.fpit = function fpit(specName, spec) {
+    return jasmineEnv.fit(specName, waitForSpec(spec));
   };
 
-  jasmineGlobal.xpit = jasmineEnv.xpit = function xpit(specName, spec) {
-    return jasmineGlobal.xit(specName, waitForSpec(spec));
+  jasmineGlobal.xpit = function xpit(specName, spec) {
+    return jasmineEnv.xit(specName, waitForSpec(spec));
   };
 
-  jasmineGlobal.once = jasmineEnv.once = function once(predicate) {
+  jasmineGlobal.once = function once(predicate) {
     var deferred = Ext.create('Deft.Deferred');
 
     function loop() {
@@ -47,14 +47,14 @@
     return deferred.promise;
   };
 
-  jasmineGlobal.onceCalled = jasmineEnv.onceCalled = function onceCalled(stubFn, times) {
+  jasmineGlobal.onceCalled = function onceCalled(stubFn, times) {
     times = times || 1;
     return this.once(function() { return stubFn.callCount >= times });
   };
 
-  jasmineGlobal.onceFired = jasmineEnv.onceFired = function onceFired(cmp, evt) {
-    var eventStub = this.stub();
-    cmp.on(evt, eventStub, jasmine.getGlobal(), {single: true});
+  jasmineGlobal.onceFired = function onceFired(cmp, evt) {
+    var eventStub = sinon.stub();
+    cmp.on(evt, eventStub, null, {single: true});
     return this.onceCalled(eventStub);
   };
 
