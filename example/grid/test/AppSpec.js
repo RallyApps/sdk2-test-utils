@@ -16,7 +16,7 @@ describe('Rally.example.testing.Grid', function() {
   });
 
   pit('it should query for blocked defects in a specific timebox scope', function() {
-    var iteration = Rally.test.mock.ModelObjectMother.getRecord('iteration');
+    var iteration = Rally.test.Mock.dataFactory.getRecord('iteration');
     var timeboxScope = Ext.create('Rally.app.TimeboxScope', { record: iteration });
     var appContext = Rally.environment.getAppContext({
       timebox: timeboxScope
@@ -30,14 +30,14 @@ describe('Rally.example.testing.Grid', function() {
   });
 
   pit('it should refresh when timebox scope changes', function() {
-    var iteration = Rally.test.mock.ModelObjectMother.getRecord('iteration');
+    var iteration = Rally.test.Mock.dataFactory.getRecord('iteration');
     var timeboxScope = Ext.create('Rally.app.TimeboxScope', { record: iteration });
     var appContext = Rally.environment.getAppContext({
       timebox: timeboxScope
     });
     var app = Rally.launchApp('Rally.example.test.Grid', { context: appContext });  //todo: better way to launch app?
     return onceFired(app, 'ready').then(function() {
-      var newIteration = Rally.test.mock.ModelObjectMother.getRecord('iteration');
+      var newIteration = Rally.test.Mock.dataFactory.getRecord('iteration');
       var newTimeboxScope = Ext.create('Rally.app.TimeboxScope', { record: newIteration });
       app.onTimeboxScopeChange(newTimeboxScope);
       return onceFired(app, 'ready').then(function() {

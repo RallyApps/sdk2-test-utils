@@ -32,7 +32,8 @@
 
     var ajax = Ext.create('Rally.test.mock.AjaxBuilder', Ext.create('Rally.test.mock.AjaxInterceptor', sinonSandbox));
     var mock = Rally.test.Mock = Ext.create('Rally.test.mock.Mock', {
-      ajax: ajax
+      ajax: ajax,
+      dataFactory: Rally.test.mock.ModelObjectMother
     });
     mock.mockAppRequests();
 
