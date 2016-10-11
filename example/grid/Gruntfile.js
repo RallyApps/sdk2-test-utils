@@ -29,7 +29,7 @@ if (module) {
                     options: {
                         styles: config.css,
                         vendor:[
-                          'https://rally1.rallydev.com/apps/' + config.sdk + '/sdk-debug.js',
+                          'node_modules/rally-sdk2-test-utils/src/sdk/' + config.sdk + '/sdk-debug.js',
                           'node_modules/rally-sdk2-test-utils/dist/sdk2-test-utils.js'
                         ],
                         template: 'node_modules/rally-sdk2-test-utils/specs.tmpl',
