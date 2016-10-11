@@ -25,7 +25,7 @@
       var data, model;
       data = this.getData(type, options);
       type = this.typeMap[typeof type.toLowerCase === "function" ? type.toLowerCase() : void 0] || type;
-      model = this._getModel(type);
+      model = this.getModel(type);
       return _.map(data, function(datum) {
         var record;
         record = new model(datum);
@@ -51,7 +51,7 @@
         datum = data[_i];
         datum._fromMOM = true;
       }
-      virtualFields = values.length === 0 ? [] : _(this._getModel(type).getFields()).filter({
+      virtualFields = values.length === 0 ? [] : _(this.getModel(type).getFields()).filter({
         virtual: true
       }).pluck('name').value();
       _results = [];
@@ -73,7 +73,7 @@
       data = [];
       count = options.count != null ? options.count : (((_ref = options.values) != null ? _ref.length : void 0) != null ? options.values.length : 1);
       if (count > 0) {
-        model = this._getModel(type);
+        model = this.getModel(type);
       }
       for (num = _i = 0; 0 <= count ? _i < count : _i > count; num = 0 <= count ? ++_i : --_i) {
         datum = {
@@ -251,7 +251,7 @@
     getNextObjectID: function() {
       return this.objectID++;
     },
-    _getModel: function(type) {
+    getModel: function(type) {
       var model;
       if (type.typePath) {
         model = type;
