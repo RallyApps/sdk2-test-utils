@@ -3,7 +3,7 @@ describe('Rally.example.test.GettingStarted', function() {
   var app;
 
   beforeEach(function() {
-    app = Rally.test.Harness.launchApp('Rally.example.test.GettingStarted', {});  //todo: better way to launch app?
+    app = Rally.test.Harness.launchApp('Rally.example.test.GettingStarted');
   });
 
   function expectTotalToBe(value) {

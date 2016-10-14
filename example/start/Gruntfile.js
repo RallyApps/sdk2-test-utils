@@ -32,7 +32,7 @@ if (module) {
                           'node_modules/rally-sdk2-test-utils/src/sdk/' + config.sdk + '/sdk-debug.js',
                           'node_modules/rally-sdk2-test-utils/dist/sdk2-test-utils.js'
                         ],
-                        template: 'node_modules/rally-sdk2-test-utils/specs.tmpl',
+                        template: 'node_modules/rally-sdk2-test-utils/lib/specs.tmpl',
                         specs: "test/**/" + spec + "Spec.js",
                         keepRunner: true
                     }

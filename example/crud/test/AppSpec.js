@@ -8,7 +8,7 @@ describe('Rally.example.test.Crud', function() {
     Description: 'Worst defect ever'
   };
 
-  var create, read, update, del;
+  var create, read, update;
 
   beforeEach(function() {
     create = Rally.test.Mock.ajax.whenCreating('defect').respondWith(defect);
@@ -44,6 +44,8 @@ describe('Rally.example.test.Crud', function() {
   });
 
   describe('when deleting the defect', function() {
+    var del;
+    
     pit('should handle success', function() {
       del = Rally.test.Mock.ajax.whenDeleting('defect', defect.ObjectID).respondWith();
       var onDeleteSuccess = Rally.test.Mock.stub();
