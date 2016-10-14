@@ -18,7 +18,15 @@
     },
 
     getAppContext: function(contextConfig) {
-      return Rally.environment.getAppContext();
+      return Rally.environment.getAppContext(contextConfig);
+    },
+
+    stub: function() {
+      return this.sinon.stub.apply(this.sinon, arguments);
+    },
+
+    spy: function() {
+      return this.sinon.spy.apply(this.sinon, arguments);
     }
   });
 
@@ -33,7 +41,8 @@
     var ajax = Ext.create('Rally.test.mock.AjaxBuilder', Ext.create('Rally.test.mock.AjaxInterceptor', sinonSandbox));
     var mock = Rally.test.Mock = Ext.create('Rally.test.mock.Mock', {
       ajax: ajax,
-      dataFactory: Rally.test.mock.ModelObjectMother
+      dataFactory: Rally.test.mock.ModelObjectMother,
+      sinon: sinonSandbox
     });
     mock.mockAppRequests();
 

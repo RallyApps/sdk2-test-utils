@@ -1,7 +1,7 @@
 (function() {
 
     var app;
-    Ext.define('Rally.test.sdk.Bootstrapper', {
+    Ext.define('Rally.test.Harness', {
         singleton: true,
 
         launchApp: function(appCls, config) {
@@ -22,14 +22,5 @@
             app = null;
           }
         }
-    }, function() {
-
-      Rally.launchApp = function(appCls, config) {
-          return Rally.test.sdk.Bootstrapper.launchApp(appCls, config);
-      };
-
-      Rally.destroyApp = function() {
-        Rally.test.sdk.Bootstrapper.destroyApp();
-      };
     });
 })();

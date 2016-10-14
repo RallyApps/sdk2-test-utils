@@ -10,7 +10,7 @@
     },
 
     tearDown: function() {
-      // Rally.destroyApp();
+      Rally.test.Harness.destroyApp();
     }
   });
 

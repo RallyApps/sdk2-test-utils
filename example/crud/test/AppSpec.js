@@ -19,24 +19,24 @@ describe('Rally.example.test.Crud', function() {
       .respondWith(Ext.apply({}, defect, { State: 'Fixed'}));
   });
 
-  pit('it should create a defect', function() {
-    var app = Rally.launchApp('Rally.example.test.Crud', {});  //todo: better way to launch app?
+  pit('should create a defect', function() {
+    var app = Rally.test.Harness.launchApp('Rally.example.test.Crud');
     return onceCalled(create).then(function() {
       var createCall = create.firstCall.args[0];
       expect(createCall.jsonData.Defect.Name).toBe('Server crash');
     });
   });
 
-  pit('it should read the defect', function() {
-    var app = Rally.launchApp('Rally.example.test.Crud', {});
+  pit('should read the defect', function() {
+    var app = Rally.test.Harness.launchApp('Rally.example.test.Crud');
     return onceCalled(read).then(function() {
       var readCall = read.firstCall.args[0];
       expect(readCall.params.fetch.split(',')).toEqual(['Name', 'State', 'Owner']);
     });
   });
 
-  pit('it should update the defect', function() {
-    var app = Rally.launchApp('Rally.example.test.Crud', {});
+  pit('should update the defect', function() {
+    var app = Rally.test.Harness.launchApp('Rally.example.test.Crud');
     return onceCalled(update).then(function() {
       var updateCall = update.firstCall.args[0];
       expect(updateCall.jsonData.Defect.State).toBe('Fixed');
@@ -46,9 +46,9 @@ describe('Rally.example.test.Crud', function() {
   describe('when deleting the defect', function() {
     pit('should handle success', function() {
       del = Rally.test.Mock.ajax.whenDeleting('defect', defect.ObjectID).respondWith();
-      var onDeleteSuccess = this.stub();
-      var onDeleteFail = this.stub();
-      var app = Rally.launchApp('Rally.example.test.Crud', {
+      var onDeleteSuccess = Rally.test.Mock.stub();
+      var onDeleteFail = Rally.test.Mock.stub();
+      var app = Rally.test.Harness.launchApp('Rally.example.test.Crud', {
         listeners: {
           complete: onDeleteSuccess,
           error: onDeleteFail
@@ -62,9 +62,9 @@ describe('Rally.example.test.Crud', function() {
 
     pit('should handle error', function() {
       del = Rally.test.Mock.ajax.whenDeleting('defect', defect.ObjectID).errorWith('something bad happened');
-      var onDeleteSuccess = this.stub();
-      var onDeleteFail = this.stub();
-      var app = Rally.launchApp('Rally.example.test.Crud', {
+      var onDeleteSuccess = Rally.test.Mock.stub();
+      var onDeleteFail = Rally.test.Mock.stub();
+      var app = Rally.test.Harness.launchApp('Rally.example.test.Crud', {
         listeners: {
           complete: onDeleteSuccess,
           error: onDeleteFail
