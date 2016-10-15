@@ -2,7 +2,7 @@
 
 The following examples are provided to help get started writing tests for your App SDK 2 based apps.
 
-* [Getting Started](start) - Demonstrates the basics of writing unit tests for a simple app sub component.
+* [Getting Started](start) - Demonstrates the basics of writing jasmine unit tests for a simple app and one sub component.  Includes exception handling, creating reusable helper functions, app rendering and handling mock button clicks.
 * [Defect CRUD](crud) - Demonstrates writing tests for an app which performs a full Create/Read/Update/Delete lifecycle of a defect.
 Includes mocking WSAPI ajax calls (both success and error conditions), the helper functions `pit` and `onceCalled`, and writing
 jasmine expectations. 
