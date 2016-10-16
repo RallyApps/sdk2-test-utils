@@ -10,6 +10,10 @@
             }]);
         },
 
+        _requiresJsonP: function() {
+            return false; //phantom hack!!!
+        },
+
         getDefaultContext: function() {
             return {
                 scope: {
