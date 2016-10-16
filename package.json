@@ -20,5 +20,8 @@
     "grunt": "~0.4.1",
     "grunt-cli": "1.2.0",
     "grunt-contrib-uglify": "2.0.0"
+  },
+  "scripts": {
+    "test": "pushd . && cd ./example/crud && npm run test && popd && pushd . && cd ./example/grid && npm run test && popd && pushd . && cd ./example/start && npm run test && popd"
   }
 }
