@@ -22,6 +22,6 @@
     "grunt-contrib-uglify": "2.0.0"
   },
   "scripts": {
-    "test": "pushd . && cd ./example/crud && npm run test && popd && pushd . && cd ./example/grid && npm run test && popd && pushd . && cd ./example/start && npm run test && popd"
+    "test": "cd ./example/crud && npm run test && cd ../grid && npm run test && cd ../start && npm run test && cd ../.."
   }
 }
