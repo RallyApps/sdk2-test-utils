@@ -27,7 +27,7 @@ describe('Rally.example.test.GettingStarted', function() {
     expectTotalToBe(5);
   });
 
-  it('should update the total when adding', function() {
+  it('should clear the input text field when adding', function() {
     performAdd(5);
     expect(app.down('#increment').getValue()).toBe('');
   });
