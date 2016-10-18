@@ -18,7 +18,7 @@ describe('Rally.example.test.Grid', function() {
   pit('should query for blocked defects in a specific timebox scope', function() {
     var iteration = Rally.test.Mock.dataFactory.getRecord('iteration');
     var timeboxScope = Ext.create('Rally.app.TimeboxScope', { record: iteration });
-    var appContext = Rally.test.Mock.getAppContext({
+    var appContext = Rally.test.Harness.getAppContext({
       timebox: timeboxScope
     });
     var app = Rally.test.Harness.launchApp('Rally.example.test.Grid', { context: appContext });
@@ -32,7 +32,7 @@ describe('Rally.example.test.Grid', function() {
   pit('should refresh when timebox scope changes', function() {
     var iteration = Rally.test.Mock.dataFactory.getRecord('iteration');
     var timeboxScope = Ext.create('Rally.app.TimeboxScope', { record: iteration });
-    var appContext = Rally.test.Mock.getAppContext({
+    var appContext = Rally.test.Harness.getAppContext({
       timebox: timeboxScope
     });
     var app = Rally.test.Harness.launchApp('Rally.example.test.Grid', { context: appContext });

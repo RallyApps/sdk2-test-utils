@@ -6,7 +6,7 @@
 
         launchApp: function(appCls, config) {
             app = Ext.create(appCls, Ext.apply({
-                context: Rally.environment.getAppContext(),
+                context: this.getAppContext(),
                 renderTo: 'testDiv',
                 appScopedSettings: {},
                 workspaceScopedSettings: {},
@@ -14,6 +14,10 @@
                 userScopedSettings: {}
             }, config));
             return app;
+        },
+
+        getAppContext: function(contextConfig) {
+            return Rally.environment.getAppContext(contextConfig);
         },
 
         destroyApp: function() {

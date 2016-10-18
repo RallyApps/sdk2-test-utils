@@ -7,18 +7,9 @@
     constructor: function(config) {
       this.callParent(arguments);
       Ext.apply(this, config);
-    },
 
-    mockAppRequests: function() {
-        var context = Rally.environment.getContext(),
-          project = context.getProject();
-
-        Rally.test.mock.data.WsapiModelFactory.stubModelCache(sinonSandbox);
-        Rally.test.mock.data.WsapiModelFactory.clearModels();
-    },
-
-    getAppContext: function(contextConfig) {
-      return Rally.environment.getAppContext(contextConfig);
+      Rally.test.mock.data.WsapiModelFactory.stubModelCache(this.sinon);
+      Rally.test.mock.data.WsapiModelFactory.clearModels();
     },
 
     stub: function() {
@@ -44,7 +35,6 @@
       dataFactory: Rally.test.mock.ModelObjectMother,
       sinon: sinonSandbox
     });
-    mock.mockAppRequests();
 
     this.ajax = ajax;
     this.dataFactory = Rally.test.mock.ModelObjectMother;
