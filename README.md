@@ -8,11 +8,11 @@ While this library is distributed as an npm package, it is generally not meant t
 
 ## Getting Started
 
-The [Testing Apps](https://help.rallydev.com/apps/2.1/#!/guide/testing_apps) guide in the App SDK help documentation provides a great overview of what writing unit tests for SDK 2 apps looks like.  Most of the utilities mentioned in that guide live in this repository.
+The [Testing Apps](https://help.rallydev.com/apps/2.1/doc/#!/guide/testing_apps) guide in the App SDK help documentation provides a great overview of what writing unit tests for SDK 2 apps looks like.  Most of the utilities mentioned in that guide live in this repository.
 
 Some useful links:
 
-* [Testing Apps](https://help.rallydev.com/apps/2.1/#!/guide/testing_apps) - overview on writing app tests
+* [Testing Apps](https://help.rallydev.com/apps/2.1/doc/#!/guide/testing_apps) - overview on writing app tests
 * [Rally App Builder](https://github.com/RallyApps/rally-app-builder#test) - how to use Rally App Builder to run tests
 * [Test Examples](./example/) - simple example apps and specs to help get started
 * [Documentation](./src/) - full documentation on all the helpers, mocks and utilities included in this library
