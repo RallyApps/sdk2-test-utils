@@ -7449,6 +7449,32 @@
                             "Sortable": true
                         },
                         {
+                            "_ref": "/slm/webservice/v2.x/attributedefinition/-42000",
+                            "_refObjectName": "preliminaryEstimateValue",
+                            "_refObjectUUID": "100bcf42-74fe-4729-b512-5e445eb713fb",
+                            "Subscription": {
+                                "_ref": "/slm/webservice/v2.x/subscription/12151",
+                                "_refObjectName": "UnlimitedSubTest",
+                                "_refObjectUUID": "9861c921-bcd4-43f0-8e33-d0309a28c3e4"
+                            },
+                            "Workspace": null,
+                            "AllowedValueType": null,
+                            "AllowedValues": {
+                                "_ref": "/slm/webservice/v2.x/attributedefinition/-42000/AllowedValues",
+                                "_type": "AllowedAttributeValue"
+                            },
+                            "AttributeType": "INTEGER",
+                            "Constrained": true,
+                            "ElementName": "PreliminaryEstimateValue",
+                            "Filterable": true,
+                            "MaxFractionalDigits": -1,
+                            "MaxLength": -1,
+                            "ReadOnly": true,
+                            "Name": "Preliminary Estimate Value",
+                            "SchemaType": "long",
+                            "Sortable": true
+                        },
+                        {
                             "_ref": "/slm/webservice/v2.x/attributedefinition/-41537",
                             "_refObjectName": "refinedEstimate",
                             "_refObjectUUID": "81fe3330-d4bd-4e27-9cea-f75c887f8c06",
@@ -9374,6 +9400,32 @@
                             "ReadOnly": false,
                             "Required": false,
                             "SchemaType": "PreliminaryEstimate",
+                            "Sortable": true
+                        },
+                        {
+                            "_ref": "/slm/webservice/v2.x/attributedefinition/-42001",
+                            "_refObjectName": "preliminaryEstimateValue",
+                            "_refObjectUUID": "100bcf42-74fe-4729-b512-5e445eb713fc",
+                            "Subscription": {
+                                "_ref": "/slm/webservice/v2.x/subscription/12151",
+                                "_refObjectName": "UnlimitedSubTest",
+                                "_refObjectUUID": "9861c921-bcd4-43f0-8e33-d0309a28c3e4"
+                            },
+                            "Workspace": null,
+                            "AllowedValueType": null,
+                            "AllowedValues": {
+                                "_ref": "/slm/webservice/v2.x/attributedefinition/-42001/AllowedValues",
+                                "_type": "AllowedAttributeValue"
+                            },
+                            "AttributeType": "INTEGER",
+                            "Constrained": true,
+                            "ElementName": "PreliminaryEstimateValue",
+                            "Filterable": true,
+                            "MaxFractionalDigits": -1,
+                            "MaxLength": -1,
+                            "ReadOnly": true,
+                            "Name": "Preliminary Estimate Value",
+                            "SchemaType": "long",
                             "Sortable": true
                         },
                         {
@@ -13331,6 +13383,32 @@
                             "ReadOnly": false,
                             "Required": false,
                             "SchemaType": "PreliminaryEstimate",
+                            "Sortable": true
+                        },
+                        {
+                            "_ref": "/slm/webservice/v2.x/attributedefinition/-42002",
+                            "_refObjectName": "preliminaryEstimateValue",
+                            "_refObjectUUID": "100bcf42-74fe-4729-b512-5e445eb713fd",
+                            "Subscription": {
+                                "_ref": "/slm/webservice/v2.x/subscription/12151",
+                                "_refObjectName": "UnlimitedSubTest",
+                                "_refObjectUUID": "9861c921-bcd4-43f0-8e33-d0309a28c3e4"
+                            },
+                            "Workspace": null,
+                            "AllowedValueType": null,
+                            "AllowedValues": {
+                                "_ref": "/slm/webservice/v2.x/attributedefinition/-42002/AllowedValues",
+                                "_type": "AllowedAttributeValue"
+                            },
+                            "AttributeType": "INTEGER",
+                            "Constrained": true,
+                            "ElementName": "PreliminaryEstimateValue",
+                            "Filterable": true,
+                            "MaxFractionalDigits": -1,
+                            "MaxLength": -1,
+                            "ReadOnly": true,
+                            "Name": "Preliminary Estimate Value",
+                            "SchemaType": "long",
                             "Sortable": true
                         },
                         {
@@ -35036,6 +35114,32 @@
                             "ReadOnly": false,
                             "Required": false,
                             "SchemaType": "PreliminaryEstimate",
+                            "Sortable": true
+                        },
+                        {
+                            "_ref": "/slm/webservice/v2.x/attributedefinition/-42005",
+                            "_refObjectName": "preliminaryEstimateValue",
+                            "_refObjectUUID": "100bcf42-74fe-4729-b512-5e445eb713fe",
+                            "Subscription": {
+                                "_ref": "/slm/webservice/v2.x/subscription/12151",
+                                "_refObjectName": "UnlimitedSubTest",
+                                "_refObjectUUID": "9861c921-bcd4-43f0-8e33-d0309a28c3e4"
+                            },
+                            "Workspace": null,
+                            "AllowedValueType": null,
+                            "AllowedValues": {
+                                "_ref": "/slm/webservice/v2.x/attributedefinition/-42005/AllowedValues",
+                                "_type": "AllowedAttributeValue"
+                            },
+                            "AttributeType": "INTEGER",
+                            "Constrained": true,
+                            "ElementName": "PreliminaryEstimateValue",
+                            "Filterable": true,
+                            "MaxFractionalDigits": -1,
+                            "MaxLength": -1,
+                            "ReadOnly": true,
+                            "Name": "Preliminary Estimate Value",
+                            "SchemaType": "long",
                             "Sortable": true
                         },
                         {
